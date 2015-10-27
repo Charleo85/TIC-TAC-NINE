@@ -1,0 +1,43 @@
+
+public class Board {
+
+	/**
+	 * 	A board is arranged into nine squares with these indices:
+	 * 		 --- --- ---
+	 * 		| 0 | 1 | 2 |
+	 * 		 ---|---|---
+	 * 		| 3 | 4 | 5 |
+	 * 		 ---|---|---
+	 * 		| 6 | 7 | 8 |
+	 * 		 --- --- ---
+	 * 	Each Board instance has one backing int array called "board".
+	 * 	Each player is represented by an int, either 1 or 2.
+	 * 	If board[i] == 0, neither player has selected that square yet; 
+	 * 	if board[i] == 1 or 2, then player 1 or 2 owns that square
+	 */
+	
+	private final int SIZE = 9;	// the number of squares in the board
+	
+	private int[] board;
+	
+	public Board() {
+		board = new int[SIZE];
+		for (int i = 0; i < SIZE; i++)
+			board[i] = 0;
+	}
+	
+	/**
+	 * 
+	 * @param square
+	 * @param player
+	 * @return true if the square was empty, false if the square was already claimed
+	 */
+	public boolean claimSquare(int square, int player) {
+		if (board[square] == 0) {
+			board[square] = player;
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
