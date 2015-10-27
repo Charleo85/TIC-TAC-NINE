@@ -1,3 +1,4 @@
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -6,13 +7,34 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 
+
 public class GuiTicTac {
 	
+	JButton a;
+	JButton b;
+	JButton c;
+	JButton d;
+	JButton e;
+	JButton f;
+	JButton g;
+	
 	public static void main(String[] args) {  
+		new GuiTicTac();
+
+		}  
+	
+	public GuiTicTac() {
+		// we could do other non-GUI work here if needed
+		initialize(); // our method to setup the GUI
+	}
+	
+	private void initialize() {
 		JFrame frame=new JFrame();//creating instance of JFrame  
-		          
+        
 		JButton a=new JButton("a");//creating instance of JButton  
 		a.setBounds(30,100,100, 100);//x axis, y axis, width, height  
+		a.addActionListener( new HandleSubmitPressed() );
+		
 		JButton b=new JButton("b");//creating instance of JButton  
 		b.setBounds(130,100,100, 100);//x axis, y axis, width, height 
 		JButton c=new JButton("c");//creating instance of JButton  
@@ -46,14 +68,13 @@ public class GuiTicTac {
 		frame.setSize(400,500);//400 width and 500 height  
 		frame.setLayout(null);//using no layout managers  
 		frame.setVisible(true);//making the frame visible  
-		}  
+	}
 	
 	class HandleSubmitPressed implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("i've beeen pressed!"); // to Console (not GUI)
-			String name = nameTF.getText().trim();
-			outputTF.setText("you clicked"); //shown on GUI (outputTF)
-			frame.repaint();  //clears that text area, ready for new text
+			a.setText("you clicked"); //shown on GUI (outputTF)
 		}
+}
 }
