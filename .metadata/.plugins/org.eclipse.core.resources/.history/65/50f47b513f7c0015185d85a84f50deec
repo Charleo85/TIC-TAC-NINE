@@ -1,0 +1,20 @@
+
+public class Manager {
+	
+	/**
+	 * 	Each board is arranged into nine squares with these labels:
+	 * 		 --- --- ---
+	 * 		| 1 | 2 | 3 |
+	 * 		 ---|---|---
+	 * 		| 4 | 5 | 6 |
+	 * 		 ---|---|---
+	 * 		| 7 | 8 | 9 |
+	 * 		 --- --- ---
+	 * 	
+	 */
+	
+	private int[] mainBoard;
+	private int[][] subBoards;
+	
+	
+}

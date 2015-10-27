@@ -1,0 +1,22 @@
+
+public class Board {
+
+	/**
+	 * 	A board is arranged into nine squares with these indices:
+	 * 		 --- --- ---
+	 * 		| 0 | 1 | 2 |
+	 * 		 ---|---|---
+	 * 		| 3 | 4 | 5 |
+	 * 		 ---|---|---
+	 * 		| 6 | 7 | 8 |
+	 * 		 --- --- ---
+	 * 	There are two backing arrays for a Board:
+	 * 	- filled: indicates if each square has been filled yet
+	 * 	- owner: indicates which player owns the square
+	 */
+	
+	private boolean[] filled;
+	private int[] owner;
+	
+	
+}
