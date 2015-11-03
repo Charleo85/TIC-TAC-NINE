@@ -13,7 +13,8 @@ public class Board {
 	 * 	Each Board instance has one backing int array called "board".
 	 * 	Each player is represented by an int, either 1 or 2.
 	 * 	If board[i] == 0, neither player has selected that square yet; 
-	 * 	if board[i] == 1 or 2, then player 1 or 2 owns that square
+	 * 	if board[i] == 1 or 2, then player 1 or 2 owns that square; 
+	 * 	if board[i] == -1, then neither player can claim that square.
 	 */
 	
 	private int[] board;
@@ -30,23 +31,28 @@ public class Board {
 	 * 
 	 * @param square
 	 * @param player
-	 * @return who owns the square
+	 * @return true if the square was successfully claimed
 	 */
-	public int claimSquare(int square, int player) {
-		if (board[square] == 0)
+	public boolean claimSquare(int square, int player) {
+		if (board[square] == 0) {
 			board[square] = player;
-		return player;
+			return true;
+		} else
+			return false;
 	}
 	
 	/**
 	 * 
 	 * @param player
-	 * @return true if the player won
+	 * @return true if the player won, false otherwise
 	 */
 	public boolean checkVictory(int player) {
+		if (victor != 0) {
+			return player == victor;
+		}
 		if (checkRows(player) || checkColumns(player) || checkDiags(player)) {
 			victor = player;
-			return true;
+			return true;;
 		}
 		return false;
 	}
@@ -75,14 +81,7 @@ public class Board {
 		return false;
 	}
 	
-	/**
-	 * 
-	 * @return a copy of the board
-	 */
-	public int[] copyOfBoard() {
-		int[] copy = new int[9];
-		for (int i = 0; i < 9; i++) {
-			
-		}
+	public int getPlayerAt(int square) {
+		return board[square];
 	}
 }

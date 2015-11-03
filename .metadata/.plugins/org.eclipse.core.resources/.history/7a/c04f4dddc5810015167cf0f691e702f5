@@ -1,0 +1,15 @@
+
+public class Manager {
+	
+	private Board mainBoard;
+	private Board[] subBoards;
+	
+	public Manager() {
+		mainBoard = new Board();
+		subBoards = new Board[9];
+		for(int i = 0; i < 9; i++)
+			subBoards[i] = new Board();
+	}
+	
+	
+}
