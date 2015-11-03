@@ -1,0 +1,35 @@
+
+public class Manager {
+	
+	private Board mainBoard;
+	private Board[] subBoards;
+	
+	private int activeBoard;
+	private int activePlayer;
+	
+	public Manager() {
+		mainBoard = new Board();
+		subBoards = new Board[9];
+		for(int i = 0; i < 9; i++)
+			subBoards[i] = new Board();
+		activeBoard = -1;
+		activePlayer = 1;
+	}
+	
+	public void click(int square) {
+		if (activeBoard == -1) {
+			if (mainBoard.getPlayerAt(square) == 0) {	// if this square of the main board is unoccupied
+				activeBoard = square;
+			}
+		} else {
+			Board board = subBoards[activeBoard];
+			if (board.claimSquare(square, activePlayer)) {
+				togglePlayer();
+			}
+		}
+	}
+	
+	private void togglePlayer() {
+		activePlayer = activePlayer % 2 + 1;	// switches from player 1 to 2 and vice versa
+	}
+}
