@@ -1,0 +1,26 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class BoardTest {
+
+	private Board board = new Board();
+	
+	public void setUp() throws Exception {
+		
+	}
+	
+	@Test
+	public void testInit() {
+		System.out.println(board.toString());
+		assertTrue(true);
+	}
+	
+	@Test
+	public void testClaim() {
+		board.claimSquare(2, 1);
+		System.out.println(board.toString());
+		assertTrue(true);
+	}
+
+}
