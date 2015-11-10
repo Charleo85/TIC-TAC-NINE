@@ -1,0 +1,19 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class BoardTest {
+
+	private Board board = new Board();
+	
+	public void setUp() throws Exception {
+		
+	}
+	
+	@Test
+	public void testInit() {
+		System.out.println(board.toString());
+		assertTrue(true);
+	}
+
+}

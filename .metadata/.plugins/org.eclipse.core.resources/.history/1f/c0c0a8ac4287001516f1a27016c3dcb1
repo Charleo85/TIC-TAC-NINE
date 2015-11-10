@@ -1,0 +1,15 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ManagerTest {
+
+	private Manager manager = new Manager();
+	
+	@Test
+	public void testInit() {
+		System.out.println(manager);
+		assertTrue(true);
+	}
+
+}
